@@ -1,24 +1,79 @@
-# README
+MyBudget
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+"MyBudget" is a budget manager web application that allows users to keep track of their budget with different categories.
+Link Demo
 
-Things you may want to cover:
+Cick here to get live demo
+Video Demo
 
-* Ruby version
+https://www.loom.com/share/ff67444d12504eeb81846f435e7b58e2
+Built With
 
-* System dependencies
+    HTML
+    CSS
+    JavaScript
+    Ruby
+    PostgreSQL
+    Ruby on Rails
 
-* Configuration
+Getting Started
 
-* Database creation
+To get a local copy of this project:
 
-* Database initialization
+Clone this repository or download the Zip folder:
 
-* How to run the test suite
+git clone https://github.com/djo1975/budget_manager_app
 
-* Services (job queues, cache servers, search engines, etc.)
+Enter in root directory:
 
-* Deployment instructions
+cd MyBudget
 
-* ...
+Then run:
+
+- bundle install
+- npm install
+
+Create Database (Mandatory)
+
+rails db:create
+rails db:schema:load
+
+If you have made a migration the run this command
+
+rails db:migrate
+
+run app on server:
+
+rails s
+
+Open Source code of app on VS-Code
+
+code .
+
+Run tests
+
+rspec
+
+Authors
+
+👤 **Mladan Ilic**
+
+- GitHub: [@Ilic](https://github.com/djo1975)
+- Twitter: [@Ilic](https://twitter.com/MladanIlic)
+- LinkedIn: [@Ilic] (https://www.linkedin.com/in/mladanilic/)
+
+handshake Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the issues page.
+Show your support
+
+Give a star if you like this project!
+Acknowledgments
+
+    Original design idea by Gregoire Vella on Behance.
+
+memo License
+
+This project is LICENSED.
