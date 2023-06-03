@@ -1,9 +1,16 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-capybara
+
+
 AllCops:
   NewCops: enable
   Exclude:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - 'bin/bundle'
 
   DisplayCopNames: true
 

@@ -22,10 +22,10 @@ gem 'puma', '~> 5.0'
 gem 'importmap-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails'
 gem 'rswag'
 gem 'rswag-api'
 gem 'rswag-ui'
+gem 'turbo-rails'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
 
@@ -63,6 +63,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'rswag-specs'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
 end
 
 group :development do
