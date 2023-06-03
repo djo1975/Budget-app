@@ -22,7 +22,7 @@ To get a local copy of this project:
 
 Clone this repository or download the Zip folder:
 
-git clone https://github.com/djo1975/budget_manager_app
+git clone https://github.com/djo1975/budget-app
 
 Enter in root directory:
 
