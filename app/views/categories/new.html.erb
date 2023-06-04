@@ -1,15 +1,21 @@
 <h1>Add a new category</h1>
 
-<%= form_with(model: @category, url: create_category_path) do |form| %>
+<%= form_with(model: @category, url: create_category_path, local: true) do |form| %>
   <div>
-    <%= form.label :name, 'Name' %>
-    <%= form.text_field :name %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div>
-    <%= form.label :icon, 'Icon' %>
-    <%= form.text_field :icon %>
+    <%= form.label :name, 'Name' %>
+    <%= form.text_field :name, required: true %>
   </div>
+
+
+<div>
+  <%= form.label :icon_url, 'Icon URL' %>
+  <%= form.text_field :icon_url, required: true %>
+</div>
+
 
   <%= form.submit 'Save' %>
 <% end %>

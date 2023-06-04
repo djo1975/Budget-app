@@ -1,7 +1,7 @@
-require:
-  - rubocop-rails
-  - rubocop-rspec
-  - rubocop-capybara
+# require:
+#   - rubocop-rails
+#   - rubocop-rspec
+#   - rubocop-capybara
 
 
 AllCops:

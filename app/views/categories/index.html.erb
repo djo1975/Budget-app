@@ -3,9 +3,11 @@
 <% @categories.each do |category| %>
   <div>
     <h2><%= category.name %></h2>
-    <p><%= category.icon %></p>
-    <p>Total Amount: <%= category.transactions.sum(:amount) %></p>
-    <%= link_to "View Transactions", category_path(category) %>
+    <% if category.icon_url.present? %>
+      <img src="<%= category.icon_url %>" alt="Category Icon" />
+    <% else %>
+      <p>No Icon</p>
+    <% end %>
   </div>
 <% end %>
 

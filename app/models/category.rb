@@ -3,4 +3,5 @@ class Category < ApplicationRecord
   belongs_to :user
   has_many :transaction_categories, dependent: :destroy
   has_many :transactions, through: :transaction_categories
+  attribute :icon_url, :string
 end
