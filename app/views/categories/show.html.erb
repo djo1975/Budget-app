@@ -1,0 +1,12 @@
+<h1><%= @category.name %></h1>
+
+<p><%= @category.icon %></p>
+
+<h2>Transactions</h2>
+
+<% @transactions.each do |transaction| %>
+  <div>
+    <p>Amount: <%= transaction.amount %></p>
+    <p>Date: <%= transaction.date %></p>
+  </div>
+<% end %>
