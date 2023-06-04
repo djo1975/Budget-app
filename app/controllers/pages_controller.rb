@@ -1,6 +1,4 @@
 class PagesController < ApplicationController
-  include Devise::Controllers::Helpers
-
   def splash
     if user_signed_in?
       redirect_to categories_path

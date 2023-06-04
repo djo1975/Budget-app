@@ -1,4 +1,4 @@
-require 'rails_helper'
+# require 'rails_helper'
 
 # Specs in this file have access to a helper object that includes
 # the CategoriesHelper. For example:
@@ -10,6 +10,13 @@ require 'rails_helper'
 #     end
 #   end
 # end
+
+require 'rails_helper'
+
 RSpec.describe CategoriesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#custom_helper_method' do
+    it 'returns the correct value' do
+      expect(helper.custom_helper_method).to eq('Hello, World!')
+    end
+  end
 end

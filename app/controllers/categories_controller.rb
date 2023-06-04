@@ -3,11 +3,6 @@ class CategoriesController < ApplicationController
     @categories = current_user.categories
   end
 
-  def show
-    @category = Category.find(params[:id])
-    @transactions = @category.transactions
-  end
-
   def new
     @category = Category.new
   end
