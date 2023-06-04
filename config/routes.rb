@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'splash', to: 'pages#splash'
   get '/categories', to: 'categories#index', as: 'categories'
+  post '/categories', to: 'categories#create', as: 'create_category'
 
   resources :users, only: [:index] do
     resources :categories
