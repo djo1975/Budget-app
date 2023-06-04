@@ -20,7 +20,7 @@ gem 'puma', '~> 5.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
-
+gem 'rubocop-rails'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'rswag'
 gem 'rswag-api'
@@ -67,7 +67,6 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'web-console'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
