@@ -1,0 +1,23 @@
+<h1>New Transaction</h1>
+
+<form action="<%= category_transactions_path(@category) %>" method="post">
+  <%= csrf_meta_tags %>
+
+  <label for="transaction_name">Name</label>
+  <input type="text" id="transaction_name" name="transaction[name]">
+
+  <label for="transaction_amount">Amount</label>
+  <input type="number" id="transaction_amount" name="transaction[amount]">
+
+  <% Category.all.each do |category| %>
+    <div>
+      <input type="checkbox" id="category_<%= category.id %>" name="transaction[category_ids][]" value="<%= category.id %>">
+      <label for="category_<%= category.id %>"><%= category.name %></label>
+    </div>
+  <% end %>
+
+  <input type="submit" value="Create Transaction">
+</form>
+
+<%= link_to 'Back', category_transactions_path(@category) %>
+

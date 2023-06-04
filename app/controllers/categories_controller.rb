@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = current_user.categories
+    @categories = current_user.categories.includes(:transactions)
   end
 
   def new

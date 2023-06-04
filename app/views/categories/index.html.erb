@@ -2,7 +2,8 @@
 
 <% @categories.each do |category| %>
   <div>
-    <h2><%= category.name %></h2>
+    <h2><%= link_to category.name, category_transactions_path(category) %></h2>
+    <p>Total Amount: <%= category.total_amount %></p>
     <% if category.icon_url.present? %>
       <img src="<%= category.icon_url %>" alt="Category Icon" />
     <% else %>

@@ -1,0 +1,14 @@
+<!-- app/views/transactions/index.html.erb -->
+<h1>Transactions</h1>
+
+<p>Total Amount: <%= @total_amount %></p>
+
+<ul>
+  <% @transactions.each do |transaction| %>
+    <li><%= transaction.name %> - <%= transaction.amount %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add a new transaction', new_category_transaction_path(@category) %>
+
+<%= link_to 'Back', authenticated_root_path %>

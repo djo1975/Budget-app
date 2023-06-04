@@ -1,7 +1,9 @@
 class Category < ApplicationRecord
-  validates :name, presence: true
   belongs_to :user
-  has_many :transaction_categories, dependent: :destroy
-  has_many :transactions, through: :transaction_categories
-  attribute :icon_url, :string
+  has_many :transaction_categories
+  has_many :transactions, through: :transaction_categories, source: :transaction_record
+
+  def total_amount
+    transactions.sum(:amount)
+  end
 end
