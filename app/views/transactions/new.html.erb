@@ -1,23 +1,26 @@
+<!-- app/views/transactions/new.html.erb -->
 <h1>New Transaction</h1>
 
-<form action="<%= category_transactions_path(@category) %>" method="post">
-  <%= csrf_meta_tags %>
+<%= form_with(model: [@category, @transaction], local: true) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
 
-  <label for="transaction_name">Name</label>
-  <input type="text" id="transaction_name" name="transaction[name]">
+  <div>
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+  </div>
 
-  <label for="transaction_amount">Amount</label>
-  <input type="number" id="transaction_amount" name="transaction[amount]">
+  <div>
+    <%= form.label :transaction_category %>
+   <%= form.collection_select :transaction_category_id, Category.all, :id, :name %>
 
-  <% Category.all.each do |category| %>
-    <div>
-      <input type="checkbox" id="category_<%= category.id %>" name="transaction[category_ids][]" value="<%= category.id %>">
-      <label for="category_<%= category.id %>"><%= category.name %></label>
-    </div>
-  <% end %>
+  </div>
 
-  <input type="submit" value="Create Transaction">
-</form>
+  <div>
+    <%= form.submit 'Create Transaction' %>
+  </div>
+<% end %>
 
 <%= link_to 'Back', category_transactions_path(@category) %>
-
