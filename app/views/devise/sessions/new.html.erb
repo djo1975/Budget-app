@@ -1,4 +1,112 @@
-<h2>Log in</h2>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+<style>
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: #f1f1f1;
+      margin: 0;
+      border: 1px solid;
+      border-radius: 1rem;
+      align-items: stretch;
+    }
+
+    .header {
+display: flex;
+flex-direction: row-reverse;
+gap: 8rem;
+justify-content: flex-end;
+background-color: #3778c2;
+color: #fff;
+height: 5rem;
+align-items: center;
+border-top-left-radius: 14px;
+border-top-right-radius: 14px;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Proxima Nova';
+      font-weight: bold;
+      margin-top: 14px;
+      color: #fff;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+.actions {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.back-link {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #fff;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="checkbox"] {
+width: 92%;
+padding: 10px;
+font-size: 16px;
+border-radius: 4px;
+border: 1px solid #ccc;
+margin-left: 5px;
+margin-right: 5px;
+}
+
+input[type="submit"] {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #3778c2;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #434b54;
+}
+
+.forgot-password {
+  color: #434b54;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  color: #3778c2;
+}
+
+
+  </style>
+</head>
+<div class='header'>
+<h1>LOGIN</h1>
+<h2><%= link_to root_path, class: 'back-link' do %><i class="material-icons">arrow_back</i><% end %></h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">

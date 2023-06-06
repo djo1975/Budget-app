@@ -14,4 +14,6 @@
   <% end %>
 </div>
 <footer>
-  <%= button_to "Add a new category", new_category_path, method: :get, class: "add-category-button" %></footer>
+  <%= button_to "Add a new category", new_category_path, method: :get, class: "add-category-button" %>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "logout-button" %>
+    </footer>
