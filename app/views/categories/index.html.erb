@@ -1,15 +1,17 @@
-<h1>Categories</h1>
-
-<% @categories.each do |category| %>
-  <div>
-    <h2><%= link_to category.name, category_transactions_path(category) %></h2>
-    <p>Total Amount: <%= category.total_amount %></p>
+<h1>CATEGORY</h1>
+<div class="categories-container">
+  <% @categories.each do |category| %>
+    <div class="category">
     <% if category.icon_url.present? %>
-      <img src="<%= category.icon_url %>" alt="Category Icon" />
-    <% else %>
-      <p>No Icon</p>
-    <% end %>
-  </div>
-<% end %>
-
-<%= link_to "Add a new category", new_category_path %>
+        <img src="<%= category.icon_url %>" alt="Category Icon" />
+      <% else %>
+        <p>No Icon</p>
+      <% end %>
+      <h2><%= link_to category.name, category_transactions_path(category) %></h2>
+      <p>Total Amount: <%= category.total_amount %></p>
+      
+    </div>
+  <% end %>
+</div>
+<footer>
+  <%= button_to "Add a new category", new_category_path, method: :get, class: "add-category-button" %></footer>

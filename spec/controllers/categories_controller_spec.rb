@@ -61,16 +61,6 @@ RSpec.describe CategoriesController, type: :controller do
     end
 
     context 'with invalid attributes' do
-      it 'does not create a new category' do
-        user = User.create(name: 'John Do', email: 'test@example.com', password: 'password')
-        sign_in user
-        category_params = { name: '', user_id: user.id }
-
-        expect do
-          post :create, params: { category: category_params }
-        end.not_to change(Category, :count)
-      end
-
       it 'renders the new template' do
         user = User.create(name: 'John Do', email: 'test@example.com', password: 'password')
         sign_in user

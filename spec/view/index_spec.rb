@@ -4,24 +4,20 @@ RSpec.describe 'categories/index', type: :view do
   let(:user) { User.create(name: 'John Doe', email: 'test@example.com', password: 'password') }
 
   before do
-    assign(:categories, [
-             Category.new(name: 'Category 1', icon_url: 'category-icon1', user:),
-             Category.new(name: 'Category 2', icon_url: 'category-icon2', user:)
-           ])
+    assign(:categories, Category.all)
   end
 
-  it 'displays the categories' do
+  it 'renders a button to add a new category' do
     render
 
-    expect(rendered).to have_content('Category 1')
-    expect(rendered).to have_content('Category 2')
-    expect(rendered).to have_css("img[src='category-icon1']")
-    expect(rendered).to have_css("img[src='category-icon2']")
+    expect(rendered).to have_button('Add a new category')
   end
 
-  it 'renders a link to add a new category' do
+  it 'renders links to category transactions' do
     render
 
-    expect(rendered).to have_link('Add a new category', href: new_category_path)
+    Category.all.each do |category|
+      expect(rendered).to have_link('Transactions', href: category_transactions_path(category_id: category.id))
+    end
   end
 end

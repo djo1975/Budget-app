@@ -4,12 +4,12 @@
 <%= form_with(model: [@category, @transaction], local: true) do |form| %>
   <div>
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required: true  %>
   </div>
 
   <div>
     <%= form.label :amount %>
-    <%= form.number_field :amount %>
+    <%= form.number_field :amount, required: true  %>
   </div>
 
   <div>
