@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'transactions/index', type: :view do
   let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 'password') }
-  let(:category) { Category.create(name: 'Category 1', user: user) }
+  let(:category) { Category.create(name: 'Category 1', user:) }
   let!(:transaction1) { Transaction.create(name: 'Transaction 1', amount: 10, author: user) }
   let!(:transaction2) { Transaction.create(name: 'Transaction 2', amount: 20, author: user) }
 

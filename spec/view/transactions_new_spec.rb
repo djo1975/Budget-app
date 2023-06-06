@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'transactions/new', type: :view do
   let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 'password') }
-  let(:category) { Category.create(name: 'Category 1', user: user) }
+  let(:category) { Category.create(name: 'Category 1', user:) }
   let(:transaction) { Transaction.new }
-  
+
   before do
     assign(:category, category)
     assign(:transaction, transaction) # Dodeli promenljivu `@transaction`
