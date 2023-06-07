@@ -117,7 +117,11 @@ background-color: #5fb523;
         flex-direction: column;
         gap: 1rem;
       }
-    
+   a {
+  text-decoration: none;
+    color: #424242;
+    font-style: normal;
+}
       .category {
         display: flex;
         align-items: center;
@@ -127,8 +131,11 @@ background-color: #5fb523;
         padding: 10px;
         margin-top: 1rem;
       }
-    p {display: none;}
-      .category h2 {
+   
+   .notice {
+    display: none;
+   }
+      .name {
         font-family: 'Proxima Nova', sans-serif;
         font-weight: bold;
         color: #3778c2;
@@ -162,7 +169,7 @@ background-color: #5fb523;
         <p>No Icon</p>
       <% end %>
       <h2><%= link_to category.name, category_transactions_path(category) %></h2>
-      <p>Total Amount: <%= category.total_amount %></p>
+      <p>Total Amount: $<%= category.total_amount %></p>
       
     </div>
   <% end %>
