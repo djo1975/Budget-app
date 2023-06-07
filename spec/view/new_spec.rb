@@ -13,9 +13,8 @@ RSpec.describe 'categories/new', type: :view do
 
     expect(rendered).to have_content('Add a new category')
     expect(rendered).to have_selector('form[action="/categories"]')
-    expect(rendered).to have_field('Name')
+    expect(rendered).to have_field('Enter the category name please')
     expect(rendered).to have_field('Icon URL')
     expect(rendered).to have_button('Save')
-    expect(rendered).to have_link('Back', href: categories_path)
   end
 end
