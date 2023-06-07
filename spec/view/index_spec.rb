@@ -10,7 +10,7 @@ RSpec.describe 'categories/index', type: :view do
   it 'renders a button to add a new category' do
     render
 
-    expect(rendered).to have_button('Add a new category')
+    expect(rendered).to have_button('ADD A NEW CATEGORY')
   end
 
   it 'renders links to category transactions' do

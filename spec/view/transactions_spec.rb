@@ -24,8 +24,10 @@ RSpec.describe 'transactions/index', type: :view do
 
   it 'displays the list of transactions' do
     expect(rendered).to have_selector('ul') do |ul|
-      expect(ul).to have_selector('li', text: 'Transaction 1 - 10')
-      expect(ul).to have_selector('li', text: 'Transaction 2 - 20')
+      expect(ul).to have_selector('li', text: 'Transaction 1')
+      expect(ul).to have_selector('li', text: 'Transaction 2')
+      expect(ul).to have_selector('li', text: 'TOTAL AMOUNT: $10')
+      expect(ul).to have_selector('li', text: 'TOTAL AMOUNT: $20')
     end
   end
 
@@ -34,6 +36,8 @@ RSpec.describe 'transactions/index', type: :view do
   end
 
   it 'renders a link to go back' do
-    expect(rendered).to have_link('Back', href: authenticated_root_path)
+    expect(rendered).to have_link('', href: root_path) do |link|
+      expect(link).to have_css('i.material-icons', text: 'arrow_back')
+    end
   end
 end
