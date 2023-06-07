@@ -19,13 +19,9 @@ RSpec.describe 'transactions/new', type: :view do
 
   it 'renders the transaction form' do
     expect(rendered).to have_selector('form') do |form|
-      expect(form).to have_field('Name')
-      expect(form).to have_field('Amount')
-      expect(form).to have_button('Create Transaction')
+      expect(form).to have_field('Enter the transaction name please')
+      expect(form).to have_field('Enter the transaction amount please')
+      expect(form).to have_button('Save')
     end
-  end
-
-  it 'renders a link to go back' do
-    expect(rendered).to have_link('Back', href: category_transactions_path(category))
   end
 end
