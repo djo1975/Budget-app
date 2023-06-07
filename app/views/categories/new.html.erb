@@ -95,7 +95,9 @@
     input[type="submit"]:hover {
       background-color: #434b54;
     }
-
+.jebaga {
+  
+}
      p {
       display: none;
       }
@@ -123,8 +125,9 @@
 
 
 <div>
-  <%= form.label :icon_url, 'Icon URL' %>
-  <%= form.text_field :icon_url, required: true %>
+ <%= form.label :icon_url, 'Icon URL', style: 'display: none;' %>
+
+  <%= form.text_field :icon_url, required: true, placeholder: "Enter the category name please" %>
 </div>
 
 
