@@ -9,8 +9,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
-  username: djo
-  password: cicibu
+
 
 development:
   <<: *default
@@ -25,4 +24,4 @@ test:
 
 production:
   <<: *default
-  database: db/Budget_app_production
+  url: <%= ENV['DATABASE_URL'] %>
