@@ -12,7 +12,9 @@ class CategoriesController < ApplicationController
     @category.user_id = current_user.id
 
     if @category.save
-      redirect_to categories_path
+      @transaction = Transaction.create(name: 'Initial Transaction', author_id: current_user.id, amount: 0)
+      @transaction.transaction_categories.create(category_id: @category.id)
+      redirect_to categories_path, notice: 'Category created successfully.'
     else
       render :new
     end
