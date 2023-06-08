@@ -12,7 +12,7 @@ class TransactionsController < ApplicationController
 
   def create
     @category = Category.find(params[:category_id])
-    @transaction = @category.transactions.build(transaction_params.merge(author_id: current_user.id))
+    @transaction = @category.transactions.build(transaction_params.merge(author: current_user))
 
     if @transaction.save
       @transaction.transaction_categories.create(category_id: @category.id)
