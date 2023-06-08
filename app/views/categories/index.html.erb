@@ -1,18 +1,18 @@
 <head>
 <style>
   body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      background-color: #f1f1f1;
-      margin: 0;
-      border: 1px solid;
-      border-radius: 1rem;
-      align-items: stretch;
-    }
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #f1f1f1;
+    margin: 0;
+    border: 1px solid;
+    border-radius: 1rem;
+    align-items: stretch;
+  }
 
-    .header {
+  .header {
     display: flex;
     justify-content: center;
     background-color: #3778c2;
@@ -21,20 +21,20 @@
     align-items: center;
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
-    }
+  }
 
-    h1 {
-      text-align: center;
-      font-family: 'Proxima Nova', 'sans-serif';
-      font-weight: normal;
-      color: #fff;
-    }
+  h1 {
+    text-align: center;
+    font-family: 'Proxima Nova', 'sans-serif';
+    font-weight: normal;
+    color: #fff;
+  }
 
-    h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #fff;
-    }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
 
   /* Text Styles */
   p {
@@ -65,7 +65,7 @@
     margin: 0;
   }
 
- /* Button Styles */
+  /* Button Styles */
   .button {
     display: inline-block;
     padding: 10px 20px;
@@ -77,9 +77,9 @@
     border-radius: 4px;
   }
 
- /* Footer Styles */
+  /* Footer Styles */
   footer {
-background-color: #5fb523;
+    background-color: #5fb523;
     color: #fff;
     text-align: center;
     position: fixed;
@@ -93,9 +93,10 @@ background-color: #5fb523;
     align-items: center;
     justify-content: center;
   }
-.logout-button {
-  margin-left: -8rem;
-      padding: 12px 24px;
+
+  .logout-button {
+    margin-left: -8rem;
+    padding: 12px 24px;
     font-size: larger;
     background-color: #3778c2;
     color: #fff;
@@ -103,59 +104,65 @@ background-color: #5fb523;
     border: white;
     border-radius: 4px;
     transition: background-color 0.3s;
-}
-.add-category-button {
-background-color: #5fb523;
+  }
+
+  .add-category-button {
+    background-color: #5fb523;
     color: #fff;
     font-size: x-large;
     border: 1px solid;
     padding: 1rem;
-}
-    /* Category Styles */
-    .categories-container {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-   a {
-  text-decoration: none;
+  }
+
+  /* Category Styles */
+  .categories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  a {
+    text-decoration: none;
     color: #424242;
     font-style: normal;
-}
-      .category {
-        display: flex;
-        align-items: center;
-        height: 5rem;
-        justify-content: space-between;
-        background-color: #fff;
-        padding: 10px;
-        margin-top: 1rem;
-      }
-   
-   .notice {
+  }
+
+  .category {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 1rem;
+  }
+
+  .notice {
     display: none;
-   }
-      .name {
-        font-family: 'Proxima Nova', sans-serif;
-        font-weight: bold;
-        color: #3778c2;
-        flex: 1;
-        text-align: center;
-        margin: 0;
-      }
-    
-      .category p {
-        text-align: center;
-        margin: 0;
-      }
-    
-      .category img {
-        width: 20%;
-        height: 100%;
-        object-fit: contain;
-      }
-      </style>
-      </head>
+  }
+
+  .name {
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: bold;
+    color: #3778c2;
+    flex: 1;
+    text-align: center;
+    margin: 0;
+  }
+
+  .category p {
+    text-align: center;
+    margin: 0;
+  }
+
+  .category img {
+    width: 20%;
+    height: 100%;
+    object-fit: contain;
+  }
+</style>
+</head>
+
 <div class='header'>
     <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "logout-button" %>
 <h1>CATEGORY</h1>
