@@ -1,0 +1,133 @@
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: #f1f1f1;
+      margin: 0;
+      border: 1px solid;
+      border-radius: 1rem;
+      align-items: stretch;
+    }
+
+    .header {
+    display: flex;
+    gap: 1rem;
+    margin-left: 1re;
+    background-color: #3778c2;
+    color: #fff;
+    height: 8rem;
+    align-items: center;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    }
+
+    h1 {
+    text-align: center;
+    font-family: 'Proxima Nova', 'sans-serif';
+    font-weight: normal;
+    font-size: x-large;
+    color: #fff;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .actions {
+      text-align: right;
+      margin-top: 10px;
+    }
+
+    .back-link {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    .field {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="checkbox"] {
+      width: 92%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #5fb523;
+      margin-left: 5px;
+      margin-right: 5px;
+      height: 2rem;
+      margin-top: 5px;
+    }
+
+    input[type="submit"] {
+    padding: 12px 24px;
+    position: fixed;
+    font-size: larger;
+    background-color: #3778c2;
+    color: #fff;
+    text-decoration: none;
+    border: white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+        margin-top: -12.7rem;
+    width: 100#;
+    margin-left: 18rem;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #5fb523;
+    }
+
+     p {
+      display: none;
+      }
+
+    .material-icons {
+      font-family: 'Material Icons';
+      margin-left: 1rem;
+      font-style: normal;
+      font-size: x-large;
+    }
+  </style>
+</head>
+<div class='header'>
+<h2><%= link_to categories_path, class: 'back-link' do %><i class="material-icons">arrow_back</i><% end %></h2>
+<h1>Add a new category</h1>
+</div>
+<%= form_with(model: @category, url: categories_path, local: true) do |form| %>
+  <div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div>
+    <%= form.text_field :name, required: true , placeholder: "Enter the category name please"%>
+  </div>
+
+
+<div>
+ <%= form.label :icon_url, 'Icon URL', style: 'display: none;' %>
+
+  <%= form.text_field :icon_url, required: true, placeholder: "Enter the icon url" %>
+</div>
+
+
+  <%= form.submit 'Save' %>
+<% end %>

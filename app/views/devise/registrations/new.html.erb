@@ -1,29 +1,149 @@
-<h2>Sign up</h2>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: #f1f1f1;
+      margin: 0;
+      border: 1px solid;
+      border-radius: 1rem;
+      align-items: stretch;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 7rem;
+      justify-content: flex-end;
+      background-color: #3778c2;
+      color: #fff;
+      height: 5rem;
+      align-items: center;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Proxima Nova', 'sans-serif';
+      font-weight: normal;
+      color: #fff;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .actions {
+      text-align: right;
+      margin-top: 10px;
+    }
+
+    .back-link {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    .field {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="checkbox"] {
+      width: 92%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #5fb523;
+      margin-left: 5px;
+      margin-right: 5px;
+      height: 2rem;
+      margin-top: 5px;
+    }
+
+    input[type="submit"] {
+      padding: 12px 24px;
+      position: relative;
+      font-size: larger;
+      background-color: #3778c2;
+      color: #fff;
+      text-decoration: none;
+      border: white;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      top: -22.2rem;
+      margin-right: 1rem;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #5fb523;
+    }
+
+    .forgot-password-link {
+
+      display: none;
+    }
+
+    .log-in-link {
+      
+          text-align: center;
+      font-family: 'Proxima Nova', 'sans-serif';
+      font-style: italic;
+      color: #434b54;
+    }
+    em {
+      margin-left: 10px;
+    }
+p {display: none;}
+    .material-icons {
+      font-family: 'Material Icons';
+      margin-left: 1rem;
+      font-style: normal;
+      font-size: x-large;
+    }
+  </style>
+</head>
+<div class='header'>
+<h2>Sign up</h2>
+<h2><%= link_to root_path, class: 'back-link' do %><i class="material-icons">arrow_back</i><% end %></h2>
+</div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
 <div class="field">
-  <%= f.label :name, "Full Name" %><br />
-  <%= f.text_field :name, autofocus: true %>
+
+  <%= f.text_field :name, autofocus: true, placeholder: "Full Name"  %>
 </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "e-mail"  %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password_confirmation" %>
   </div>
 
   <div class="actions">

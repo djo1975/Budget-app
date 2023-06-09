@@ -1,0 +1,170 @@
+<!-- app/views/transactions/index.html.erb -->
+<head>
+<style>
+  body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: #f1f1f1;
+      margin: 0;
+      border: 1px solid;
+      border-radius: 1rem;
+      align-items: stretch;
+    }
+
+    .header {
+    display: flex;
+    justify-content: center;
+    background-color: #3778c2;
+    color: #fff;
+    height: 7rem;
+    align-items: center;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Proxima Nova', 'sans-serif';
+      font-weight: normal;
+      color: #fff;
+    }
+
+    /* h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+  /* Text Styles */
+  p {
+text-align: center;
+    margin: 0;
+    font-size: larger;
+    background-color: white;
+  } */
+
+  /* List Styles */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+    margin-right: 1rem;
+    margin-left: -2rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+  }
+
+  li p {
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: bold;
+    color: #3778c2;
+    margin: 0;
+  }
+
+ /* Button Styles */
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3778c2;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+ /* Footer Styles */
+  footer {
+background-color: #5fb523;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    height: 16vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+a {
+background-color: #5fb523;
+    color: #fff;
+    font-size: x-large;
+    border: 1px solid;
+    padding: 1rem;
+    text-decoration: none;
+}
+    /* Category Styles */
+    .transactions-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+    .notice {
+      display: none;
+    }
+      .transactions {
+        display: flex;
+        align-items: center;
+        height: 5rem;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 10px;
+        margin-top: 1rem;
+      }
+
+      .back-link{
+       color: white;
+       background-color: #3778c2;
+       border: none;
+       margin-left: -7rem;
+      }
+
+      .category img {
+        width: 20%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .material-icons {
+  font-family: 'Material Icons';
+    margin-left: 1rem;
+    font-style: normal;
+    font-size: x-large;
+}
+      </style>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+      </head>
+      <div class='header'>
+      <h2><%= link_to root_path, class: 'back-link' do %><i class="material-icons">arrow_back</i><% end %></h2>
+
+<h1>Transactions</h1>
+
+</div>
+<div class="transactions-container">
+<p>Total Amount: <%= @total_amount %></p>
+
+<ul>
+  <% @transactions.each do |transaction| %>
+    <li><%= transaction.name %><br /><br />TOTAL AMOUNT:<hr> <br /><br />$<%= transaction.amount %></li>
+
+  <% end %>
+</ul>
+</div>
+<footer>
+<%= link_to 'Add a new transaction', new_category_transaction_path(@category) %>
+</footer>

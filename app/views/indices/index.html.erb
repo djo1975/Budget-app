@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Indices</h1>
+
+<div id="indices">
+  <% @indices.each do |index| %>
+    <%= render index %>
+    <p>
+      <%= link_to "Show this index", index %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New index", new_index_path %>

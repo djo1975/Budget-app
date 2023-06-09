@@ -1,0 +1,179 @@
+<head>
+<style>
+  body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: #f1f1f1;
+      margin: 0;
+      border: 1px solid;
+      border-radius: 1rem;
+      align-items: stretch;
+    }
+
+    .header {
+    display: flex;
+    justify-content: center;
+    background-color: #3778c2;
+    color: #fff;
+    height: 7rem;
+    align-items: center;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Proxima Nova', 'sans-serif';
+      font-weight: normal;
+      color: #fff;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+  /* Text Styles */
+  p {
+    text-align: center;
+    margin: 0;
+  }
+
+  /* List Styles */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 1rem;
+  }
+
+  li p {
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: bold;
+    color: #3778c2;
+    margin: 0;
+  }
+
+ /* Button Styles */
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3778c2;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+ /* Footer Styles */
+  footer {
+background-color: #5fb523;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    height: 16vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.logout-button {
+  margin-left: -8rem;
+      padding: 12px 24px;
+    font-size: larger;
+    background-color: #3778c2;
+    color: #fff;
+    text-decoration: none;
+    border: white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.add-category-button {
+background-color: #5fb523;
+    color: #fff;
+    font-size: x-large;
+    border: 1px solid;
+    padding: 1rem;
+}
+    /* Category Styles */
+    .categories-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+   a {
+  text-decoration: none;
+    color: #424242;
+    font-style: normal;
+}
+      .category {
+        display: flex;
+        align-items: center;
+        height: 5rem;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 10px;
+        margin-top: 1rem;
+      }
+   
+   .notice {
+    display: none;
+   }
+      .name {
+        font-family: 'Proxima Nova', sans-serif;
+        font-weight: bold;
+        color: #3778c2;
+        flex: 1;
+        text-align: center;
+        margin: 0;
+      }
+    
+      .category p {
+        text-align: center;
+        margin: 0;
+      }
+    
+      .category img {
+        width: 20%;
+        height: 100%;
+        object-fit: contain;
+      }
+      </style>
+      </head>
+<div class='header'>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "logout-button" %>
+<h1>CATEGORY</h1>
+</div>
+<div class="categories-container">
+  <% @categories.each do |category| %>
+    <div class="category">
+    <% if category.icon_url.present? %>
+        <img src="<%= category.icon_url %>" alt="Category Icon" />
+      <% else %>
+        <p>No Icon</p>
+      <% end %>
+      <h2><%= link_to category.name, category_transactions_path(category) %></h2>
+      <p>Total Amount: $<%= category.total_amount %></p>
+      
+    </div>
+  <% end %>
+</div>
+<footer>
+  <%= button_to "ADD A NEW CATEGORY", new_category_path, method: :get, class: "add-category-button" %>
+    </footer>
