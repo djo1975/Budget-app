@@ -7,12 +7,12 @@ class TransactionsController < ApplicationController
 
   def new
     @category = Category.find(params[:category_id])
-    @transaction = @category.transactions.build
+    @transaction = Transaction.new
   end
 
   def create
     @category = Category.find(params[:category_id])
-    @transaction = @category.transactions.build(transaction_params.merge(author_id: current_user.id))
+    @transaction = Transaction.new(transaction_params.merge(author_id: current_user.id))
 
     if @transaction.save
       @transaction.transaction_categories.create(category_id: @category.id)
@@ -25,6 +25,6 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:name, :amount, category_ids: [])
+    params.require(:transaction).permit(:name, :amount)
   end
 end
