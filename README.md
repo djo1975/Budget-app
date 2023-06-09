@@ -1,60 +1,99 @@
-MyBudget
+<a name="readme-top"></a>
+<!-- TABLE OF CONTENTS -->
+<div align="center">
+  <img src="./personal/Untitled.png" width="140" height="auto" />
+</div>
 
-"MyBudget" is a budget manager web application that allows users to keep track of their budget with different categories.
-Link Demo
 
-Cick here to get live demo
-Video Demo
+# 📗 Table of Contents
 
-https://www.loom.com/share/ff67444d12504eeb81846f435e7b58e2
-Built With
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Usage](#usage)
+- [👥 Author](#author)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
 
-    HTML
-    CSS
-    JavaScript
-    Ruby
-    PostgreSQL
-    Ruby on Rails
+- [📝 License](#license)
 
-Getting Started
 
-To get a local copy of this project:
+# 📖 Budget App <a name="about-project"></a>
 
-Clone this repository or download the Zip folder:
+**Budget App** is a Ruby on Rails capstone project which you can create new categories, you can write new transactions and deploy it the categories and finally you can control how much money you spend each category.
 
-git clone https://github.com/djo1975/budget-app
+## Video Link 🚀
+[Video here](https://www.loom.com/share/eac07ab097524a31b3d1831607bcb5b9)
 
-Enter in root directory:
+## Render Deploy 🚀
 
-cd MyBudget
+[Live demo here](https://mitra-6mqk.onrender.com)
 
-Then run:
+## 🛠 Built With <a name="built-with"></a>
+HTML
+CSS
+JavaScript
+Ruby
+PostgreSQL
+Ruby on Rails
+### Tech Stack <a name="tech-stack"></a>
 
-- bundle install
-- npm install
+- <a href="https://www.ruby-lang.org/">Ruby</a>
+- <a href="https://rubyonrails.org/">Rails</a>
+- <a href="https://www.postgresql.org/">PostgreSQL</a>
 
-Create Database (Mandatory)
+### Key Features <a name="key-features"></a>
 
-rails db:create
-rails db:schema:load
+- **CRUD Operations**
+- **Authentication**
+- **Authorization**
 
-If you have made a migration the run this command
 
-rails db:migrate
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-run app on server:
+## 💻 Getting Started <a name="getting-started"></a>
 
-rails s
+### Prerequisites
 
-Open Source code of app on VS-Code
+To run this project you need the following dependencies:
 
-code .
+ - Ruby: `3.2.2`
+ - Rails: `7.0.4.3+`
+ - PostgreSQL: `15.2+`
 
-Run tests
+### Setup
 
-rspec
+- Clone this repository to your local machine:
+```sh
+  git clone https://github.com/djo1975/Budget-app.git
+  cd Budget-app
+```
+- Install dependencies:
+```sh
+  bundle install
+```
 
-Authors
+- Recreate Data Base:
+```sh
+  rake db:schema:load
+```
+
+### Usage
+
+To run the project, execute the following command in the terminal:
+
+```  sh
+  cd Blog_app
+  rails s  
+```
+
+## 👥 Author <a name="author"></a>
 
 👤 **Mladan Ilic**
 
@@ -62,18 +101,43 @@ Authors
 - Twitter: [@Ilic](https://twitter.com/MladanIlic)
 - LinkedIn: [@Ilic] (https://www.linkedin.com/in/mladanilic/)
 
-handshake Contributing
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- **Add Authentication page**
+- **Add authorization rules.**
+- **Add API endpoints.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the issues page.
-Show your support
+Feel free to check the [issues page](https://github.com/djo1975/Budget-app/issues).
 
-Give a star if you like this project!
-Acknowledgments
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-    Original design idea by Gregoire Vella on Behance.
 
-memo License
+## ⭐️ Show your support <a name="support"></a>
 
-This project is LICENSED.
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank Microverse for giving me the opportunity to work on this project. Special thanks Gregoire Vella on Behance who shared his desing.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
