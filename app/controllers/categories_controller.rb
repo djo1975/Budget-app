@@ -12,6 +12,13 @@ class CategoriesController < ApplicationController
     @category.user_id = current_user.id
 
     if @category.save
+      # Proverite da li postoje transakcije za dodavanje
+      if params[:transactions_id].present?
+        params[:transactions_id].each do |transaction_id|
+          @category.transactions << Transaction.find(transaction_id)
+        end
+      end
+
       redirect_to categories_path
     else
       render :new
