@@ -1,8 +1,3 @@
-# require:
-#   - rubocop-rails
-#   - rubocop-rspec
-#   - rubocop-capybara
-
 
 AllCops:
   NewCops: enable
@@ -11,7 +6,7 @@ AllCops:
     - "Rakefile"
     - "node_modules/**/*"
     - 'bin/bundle'
-
+    - 'db/migrate/20230604095323_create_budget_tables.rb'
   DisplayCopNames: true
 
 Layout/LineLength:

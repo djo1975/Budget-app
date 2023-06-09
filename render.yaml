@@ -1,7 +1,7 @@
 databases:
-  - name: djo
-    databaseName: budget_app_3yqk
-    user: djo
+  - name: mile
+    databaseName: mile
+    user: mile_user
 
 services:
   - type: web
@@ -12,7 +12,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: djo
+          name: mile
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
