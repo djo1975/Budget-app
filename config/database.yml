@@ -8,7 +8,6 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: localhost
   username: djo
   password: cicibu
 
@@ -25,4 +24,7 @@ test:
 
 production:
   <<: *default
-  database: db/Budget_app_production
+  url: <%= ENV["DATABASE_URL"] %>
+  username: djo
+  password: cicibu
+
