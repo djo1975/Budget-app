@@ -1,7 +1,7 @@
 databases:
-  - name: djo
-    databaseName: budget_app_3yqk
-    user: djo
+  - name: mitra
+    databaseName: mitra
+    user: mitra_user
 
 services:
   - type: web
