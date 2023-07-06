@@ -10,58 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_604_095_323) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_04_095323) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'categories', force: :cascade do |t|
-    t.string 'name'
-    t.bigint 'user_id', null: false
-    t.string 'icon', default: ''
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'icon_url', default: ''
-    t.index ['user_id'], name: 'index_categories_on_user_id'
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.string "icon", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "icon_url", default: ""
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
-  create_table 'transaction_categories', force: :cascade do |t|
-    t.bigint 'transaction_record_id', null: false
-    t.bigint 'category_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['category_id'], name: 'index_transaction_categories_on_category_id'
-    t.index ['transaction_record_id'], name: 'index_transaction_categories_on_transaction_record_id'
+  create_table "transaction_categories", force: :cascade do |t|
+    t.bigint "transaction_record_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_transaction_categories_on_category_id"
+    t.index ["transaction_record_id"], name: "index_transaction_categories_on_transaction_record_id"
   end
 
-  create_table 'transactions', force: :cascade do |t|
-    t.string 'name'
-    t.bigint 'author_id', null: false
-    t.decimal 'amount'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['author_id'], name: 'index_transactions_on_author_id'
+  create_table "transactions", force: :cascade do |t|
+    t.string "name"
+    t.bigint "author_id", null: false
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_transactions_on_author_id"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'email', default: '', null: false
-    t.string 'encrypted_password', default: '', null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.integer 'sign_in_count', default: 0, null: false
-    t.datetime 'current_sign_in_at'
-    t.datetime 'last_sign_in_at'
-    t.string 'current_sign_in_ip'
-    t.string 'last_sign_in_ip'
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key 'categories', 'users'
-  add_foreign_key 'transaction_categories', 'categories'
-  add_foreign_key 'transaction_categories', 'transactions', column: 'transaction_record_id'
-  add_foreign_key 'transactions', 'users', column: 'author_id'
+  add_foreign_key "categories", "users"
+  add_foreign_key "transaction_categories", "categories"
+  add_foreign_key "transaction_categories", "transactions", column: "transaction_record_id"
+  add_foreign_key "transactions", "users", column: "author_id"
 end
